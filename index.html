@@ -1,0 +1,100 @@
+<script type="text/javascript">
+
+	let user_score = 0;
+	let computer_score = 0;
+
+	// this is going to randomly return a computer choice for R - rock, P - paper, S - scissor
+	// Calling this function will return a string randomly chosen from array of 3 choices. 
+	function computerPlay() {
+		var choices = [
+			"rock",
+			"paper",
+			"scissor"
+			];
+		return choices[Math.floor(Math.random() * choices.length)]
+	}
+
+
+	// function to playRound(input1, input2) and then going to return the result of the game.
+	function playRound(input1, input2) {
+		// if the user choses rock
+		if (input1 == "rock" && input2 == "paper") {
+			return "You lose!!";
+		}
+		else if (input1 == "rock" && input2 == "scissor") {
+			return "You win!!";
+		}
+		else if (input1 == "rock" && input2 == "rock") {
+			return "Draw!!";
+		}
+		//if the user choses paper
+		else if (input1 == "paper" && input2 == "paper") {
+			return "Draw!!";
+		}
+		else if (input1 == "paper" && input2 == "rock") {
+			return "You win!!";
+		}
+		else if (input1 == "paper" && input2 == "scissor") {
+			return "You lose!!";
+		}
+		// if the user chooses scissor
+		else if (input1 == "scissor" && input2 == "scissor") {
+			return "Draw!!";
+		}
+		else if (input1 == "scissor" && input2 =="rock") {
+			return "You lose!!";
+		}
+		else if (input1 == "scissor" && input2 == "paper") {
+			return "You win!!";
+		}
+	}
+
+	// use the previous function inside the game() 5x to play the game 5x as specified in assignment. 
+	function game() {
+
+		// play 5 rounds of playRound(playerSelection, computerSelection)
+		for (let i = 1; i < 6; i++) {
+			
+			// Ask the player for their choice
+			let playerSelection = prompt("Please enter your choice: (Rock, Paper, or Scissor"); 
+			
+			// Make player choice case insensitive by converting everything to lowercase.
+			playerSelection = playerSelection.toLowerCase();
+			
+			// Call function to randomly chose computer option
+			let computerSelection = computerPlay();  
+			
+			// Announce which round we are on.
+			console.log("This is round" + i +": ");
+			
+			// Store result of round in variable
+			let round_result = playRound(playerSelection,computerSelection);
+			
+			// Output it to user the result of round.
+			console.log(round_result);		
+			
+			// Calculate who won then add point to user or computer.
+			if (round_result == "You win!!") {
+				user_score++;
+			}
+			else if (round_result == "You lose!!"){
+				computer_score++
+			}
+		}
+
+		// After tallying up scores, announce who won or if it was a draw.
+		if (user_score > computer_score) {
+			console.log("Congrats you win with: " + user_score + " points");
+		}
+		else if (user_score < computer_score) {
+			console.log(computer_score);
+			console.log("Computer wins with: " + computer_score + " points");
+		}
+		else {
+			console.log("We have a draw. Try again!");
+		}
+	}
+
+	game();  // call the game() function to play 5 rounds of rock-paper-scissor
+
+</script>

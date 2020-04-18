@@ -1,0 +1,91 @@
+html
+{
+    font-size: 10px;
+    background: url(https://9p5z91rxsag1usgoc1ctvupb-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/ProfessionalRPS_JLongo_52616.jpg) top;
+    background-size: cover;
+}
+
+h1
+{
+    color: white;
+    text-align: center;
+    font-size: 8rem;
+}
+
+/* This is the overarching one. P that are defined after this will take precedence over this. */
+p
+{
+    color: yellow;
+}
+
+/* Define the div id = "welcome_box" */
+#welcome_box
+{
+    /* Align the text to the center */
+    text-align: center; 
+    /* Make the font size bigger */
+    font-size: 3rem;
+    margin-left: 20%;
+    margin-right: 20%;
+    background-color: grey;
+}
+
+/* Define the welcome phrase sentence css  */
+#welcome_phrase
+{
+    color: white;
+    font-weight: bold;
+}
+
+#center
+{
+    display: flex;
+    position:relative;
+    min-width: fit-content;
+    /* width: 80%; */  /* this controls the width of the box along the side of the entire screen. */
+    border: thick solid greenyellow;
+    height: 200px; /*This controls the greenbox of the center div */    
+    justify-content: space-between; 
+}
+
+/* 3 ID defined here */
+#rock, #paper, #scissor 
+{
+    font-size: 28px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    position: relative;
+    top: 25%; /* this controls the from top to top of buttons in the box */
+    height: 100px; /*Controls the button height */
+    width: 30%; /* controls the width of the button box*/
+    margin-right:20px;
+    margin-left: 20px;
+    background: darkblue;
+    border: 10px solid green;
+    transition: 0.7s all;
+    color:white;
+}
+
+#rock:hover, #paper:hover, #scissor:hover
+{
+    color:red;
+}
+
+#result_box 
+{
+    text-align: center;
+    color: blue;
+    font-size: 5rem;
+}
+
+#outcome
+{
+    border: 10px solid lightseagreen;
+}
+
+#phrase_1 
+{
+    color: lightgoldenrodyellow;
+}
+
+
